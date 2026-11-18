@@ -1,16 +1,97 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const projects = [
+	{
+		name: 'Raft Consensus',
+		tag: 'Go · distributed systems',
+		blurb: 'An implementation of the Raft consensus algorithm, built for Northwestern’s Distributed Systems class.',
+		href: 'https://github.com/raazinator/NU-Raft-Consensus',
+	},
+	{
+		name: '3D Object Tracking',
+		tag: 'C++ · sensor fusion',
+		blurb: 'Estimating time-to-collision with the car ahead from camera keypoints, YOLO detections, and lidar, for the Udacity Sensor Fusion Nanodegree.',
+		href: 'https://github.com/raazinator/SF-3D-Object-Tracking',
+	},
+	{
+		name: 'Music Genre Classification',
+		tag: 'JavaScript · ML',
+		blurb: 'Classifying songs by genre, built for Northwestern’s Machine Perception of Music class.',
+		href: 'https://github.com/raazinator/NU-Music-Genre-Classification',
+	},
+	{
+		name: 'EzCal',
+		tag: 'JavaScript · React',
+		blurb: 'An app built in 10 weeks for Northwestern’s Rapid Prototyping class.',
+		href: 'https://github.com/raazinator/NU-EzCal',
+	},
+];
+
+const links = [
+	{ label: 'Email', href: 'mailto:beyabanifaraaz@gmail.com' },
+	{ label: 'GitHub', href: 'https://github.com/raazinator' },
+	{ label: 'LinkedIn', href: 'https://linkedin.com/in/faraaz-beyabani/' },
+];
 ---
 
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/blog/">Blog</a>
-
 <Layout>
-	<div>
-		Hello
+	<div class="mx-auto max-w-3xl px-4 sm:px-6">
+		<nav class="flex items-center justify-between py-6 font-mono text-sm">
+			<a href="/" class="font-medium">faraaz<span class="text-ember">.</span>org</a>
+			<div class="flex gap-5 text-muted">
+				<a href="/about/" class="hover:text-ink">about</a>
+				<a href="/blog/" class="hover:text-ink">blog</a>
+			</div>
+		</nav>
+
+		<main>
+			<section class="py-20 sm:py-28">
+				<p class="mb-4 font-mono text-sm text-ember">hello, I’m</p>
+				<h1 class="font-display text-5xl leading-tight font-semibold tracking-tight sm:text-7xl">
+					Faraaz Beyabani<span class="text-ember">.</span>
+				</h1>
+				<!-- TODO: make this yours -->
+				<p class="mt-6 max-w-xl text-lg leading-relaxed text-muted">
+					I’m a developer who likes building things end to end — web apps, distributed
+					systems, machine learning, and lately, games.
+				</p>
+				<div class="mt-8 flex flex-wrap gap-3 font-mono text-sm">
+					{links.map((link) => (
+						<a
+							href={link.href}
+							class="rounded-full border border-line px-4 py-2 transition-colors hover:border-ember hover:text-ember"
+						>
+							{link.label}
+						</a>
+					))}
+				</div>
+			</section>
+
+			<section class="border-t border-line py-16">
+				<h2 class="mb-8 font-mono text-sm tracking-widest text-muted uppercase">Selected work</h2>
+				<ul class="grid gap-4 sm:grid-cols-2">
+					{projects.map((project) => (
+						<li>
+							<a
+								href={project.href}
+								class="group block h-full rounded-xl border border-line bg-paper-raised p-5 transition-colors hover:border-ember"
+							>
+								<p class="font-mono text-xs text-ember">{project.tag}</p>
+								<h3 class="mt-2 font-display text-xl font-semibold">
+									{project.name}
+									<span class="inline-block transition-transform group-hover:translate-x-1">→</span>
+								</h3>
+								<p class="mt-2 text-sm leading-relaxed text-muted">{project.blurb}</p>
+							</a>
+						</li>
+					))}
+				</ul>
+			</section>
+		</main>
+
+		<footer class="border-t border-line py-8 font-mono text-xs text-muted">
+			© {new Date().getFullYear()} Faraaz Beyabani
+		</footer>
 	</div>
 </Layout>

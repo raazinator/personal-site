@@ -1,1 +1,37 @@
 @import "tailwindcss";
+
+/*
+  Theme: "Ink & Ember"
+  Warm paper, dark ink, one hot accent. Everything else is a shade of those.
+  Use as Tailwind utilities: bg-paper, text-ink, text-muted, border-line, text-ember, bg-ember...
+*/
+@theme {
+  --color-paper: #f5f0e6;
+  --color-paper-raised: #fbf8f1;
+  --color-ink: #1d1a16;
+  --color-muted: #6b6359;
+  --color-line: #ddd4c4;
+  --color-ember: #d9480f;
+  --color-ember-soft: #fbe3d5;
+
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-paper: #15130f;
+    --color-paper-raised: #1e1b16;
+    --color-ink: #efe8db;
+    --color-muted: #a39a8c;
+    --color-line: #332e27;
+    --color-ember: #ff7a3d;
+    --color-ember-soft: #3a2116;
+  }
+}
+
+::selection {
+  background: var(--color-ember);
+  color: var(--color-paper);
+}

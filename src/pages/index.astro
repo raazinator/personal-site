@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
 
 const projects = [
 	{
@@ -37,13 +38,7 @@ const links = [
 
 <Layout>
 	<div class="mx-auto max-w-3xl px-4 sm:px-6">
-		<nav class="flex items-center justify-between py-6 font-mono text-sm">
-			<a href="/" class="font-medium">faraaz<span class="text-ember">.</span>org</a>
-			<div class="flex gap-5 text-muted">
-				<a href="/about/" class="hover:text-ink">about</a>
-				<a href="/blog/" class="hover:text-ink">blog</a>
-			</div>
-		</nav>
+		<Header />
 
 		<main>
 			<section class="py-20 sm:py-28">

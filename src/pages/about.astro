@@ -1,10 +1,22 @@
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/blog/">Blog</a>
-  
-  <h1>About Me</h1>
-  <h2>... and my new Astro site!</h2>
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+---
+<Layout>
+  <div class="mx-auto max-w-3xl px-4 sm:px-6">
+		<Header />
 
-  <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
+		<main>
+      <h1>About Me</h1>
+      <h2>... and my new Astro site!</h2>
 
-  <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
+      <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
+
+      <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
+		</main>
+
+		<footer class="border-t border-line py-8 font-mono text-xs text-muted">
+			© {new Date().getFullYear()} Faraaz Beyabani
+		</footer>
+	</div>
+</Layout>

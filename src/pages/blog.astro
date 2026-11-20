@@ -1,9 +1,23 @@
-<body>
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/blog/">Blog</a>
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+---
+<Layout>
+  <div class="mx-auto max-w-3xl px-4 sm:px-6">
+		<Header />
 
-  <h1>My Astro Site</h1>
-  <h1>My Astro Learning Blog</h1>
-  <p>This is where I will post about my journey learning Astro.</p>
-</body>
+		<main>
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/blog/">Blog</a>
+    
+      <h1>My Astro Site</h1>
+      <h1>My Astro Learning Blog</h1>
+      <p>This is where I will post about my journey learning Astro.</p>
+    </main>
+
+		<footer class="border-t border-line py-8 font-mono text-xs text-muted">
+			© {new Date().getFullYear()} Faraaz Beyabani
+		</footer>
+	</div>
+</Layout>
